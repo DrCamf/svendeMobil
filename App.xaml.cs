@@ -1,11 +1,16 @@
-﻿namespace svendeMobil;
+﻿using svendeMobil.Handlers;
+using svendeMobil.Models;
+
+namespace svendeMobil;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public static UserInfo UserInfo;
 
-		MainPage = new AppShell();
+    public App()
+	{
+		
+
+        MainPage = new AppShell();
 	}
 }

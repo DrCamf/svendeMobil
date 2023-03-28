@@ -2,16 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="svendeMobil.Views.LoginPage"
+             xmlns:viewmodel ="clr-namespace:svendeMobil.ViewModels"
+             x:DataType="viewmodel:LoginViewModel"
+             Shell.NavBarIsVisible="False"
              Title="LoginPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+        <VerticalStackLayout>
+        
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Welcome to LOGIN!"
+             />
         <Label Text="Email" />
-        <Entry x:Name="useremail" />
+            <Entry x:Name="useremail" Placeholder="Enter email" Text="{Binding Useremail}"/>
         <Label Text="Adgangs kode" />
-        <Entry x:Name="userpassword" />
-        <Button Text="Login" />
+            <Entry x:Name="userpassword" Placeholder="Enter password" IsPassword="True" Text="{Binding Password}"/>
+        <Button Text="Login" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding LoginCommand}"/>
+    </VerticalStackLayout>
+
+
     </VerticalStackLayout>
 </ContentPage>

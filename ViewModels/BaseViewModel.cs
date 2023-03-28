@@ -1,4 +1,6 @@
-﻿using DevExpress.Mvvm;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using DevExpress.Mvvm;
+using svendeMobil.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,20 +11,16 @@ using System.Threading.Tasks;
 
 namespace svendeMobil.ViewModels
 {
-    public partial class BaseViewModel : INotifyPropertyChanged
+    public partial class BaseViewModel : ObservableObject
     {
-        public object Parameter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [ObservableProperty]
+        string title;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotLoading))]
+        bool isLoading;
 
-        public void OnNavigatedFrom()
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsNotLoading => !isLoading;
 
-        public void OnNavigatedTo(NavigatedToEventArgs args)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

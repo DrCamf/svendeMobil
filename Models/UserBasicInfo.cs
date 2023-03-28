@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace svendeMobil.ViewModels
+namespace svendeMobil.Models
 {
-    class HomeViewModel
+    public class UserBasicInfo
     {
-
     }
 }
