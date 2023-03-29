@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using svendeMobil.Services;
 using svendeMobil.ViewModels;
 using svendeMobil.Views;
 
@@ -18,9 +19,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		
+
+        builder.Services.AddTransient<UserApiService>();
 
 
-		// Views
+        // Views
         builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<HomePage>();

@@ -4,6 +4,7 @@ using svendeMobil.Models;
 using svendeMobil.Views;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,18 @@ namespace svendeMobil.ViewModels
             if (string.IsNullOrEmpty(token) ) 
             {
                 await GoToLoginPage();
+            } else
+            {
+                var jsonToken = new JwtSecurityTokenHandler().ReadToken(token) as JwtSecurityToken;
+                
+                if(jsonToken.ValidTo < DateTime.UtcNow)
+                {
+                    SecureStorage.Remove("Token");
+                    await GoToLoginPage();
+                } else 
+                { 
+                    await GoToMainPage(); 
+                }
             }
 
             //evaluate token and decide if valid
@@ -51,6 +64,7 @@ namespace svendeMobil.ViewModels
 
         private async Task GoToLoginPage()
         {
+            
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
 
