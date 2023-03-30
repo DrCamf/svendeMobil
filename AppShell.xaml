@@ -21,6 +21,13 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage"
         Title="Login Page" />
+
+        <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage"
+        Title="Home Page" />
     </FlyoutItem>
 
 </Shell>

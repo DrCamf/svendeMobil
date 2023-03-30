@@ -31,16 +31,16 @@ namespace svendeMobil.ViewModels
                 await GoToLoginPage();
             } else
             {
-                var jsonToken = new JwtSecurityTokenHandler().ReadToken(token) as JwtSecurityToken;
+                /*var jsonToken = new JwtSecurityTokenHandler().ReadToken(token) as JwtSecurityToken;
                 
                 if(jsonToken.ValidTo < DateTime.UtcNow)
                 {
                     SecureStorage.Remove("Token");
                     await GoToLoginPage();
                 } else 
-                { 
+                { */
                     await GoToMainPage(); 
-                }
+                //}
             }
 
             //evaluate token and decide if valid

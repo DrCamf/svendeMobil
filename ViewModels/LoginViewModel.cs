@@ -52,7 +52,7 @@ namespace svendeMobil.ViewModels
 
 
                     //build a menu onthe fly based on the user role
-                    var jsonToken = new JwtSecurityTokenHandler().ReadToken(response.Token) as JwtSecurityToken;
+                    //var jsonToken = new JwtSecurityTokenHandler().ReadToken(response.Token) as JwtSecurityToken;
                     //var role = jsonToken.Claims.FirstOrDefault(q => q.Type.Equals(JsonClaimValueTypes.Role))?.Value;
                     var role = "user";
                     var userInfo = new UserInfo()
