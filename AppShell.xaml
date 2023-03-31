@@ -28,6 +28,12 @@
         ContentTemplate="{DataTemplate local:HomePage}"
         Route="HomePage"
         Title="Home Page" />
+        <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:MessagePage}"
+        Route="MessagePage"
+        Title="Message Page" />
     </FlyoutItem>
 
 </Shell>

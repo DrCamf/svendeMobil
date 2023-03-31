@@ -8,8 +8,15 @@ namespace svendeMobil.Models
 {
     public class MessageModel
     {
+        public int Id { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
-        public DateTime Sent_at { get; set; }
+        public string Sent_at { get; set; }
+
+        public MessageModel(string subject, string body)
+        {
+            Subject = subject;
+            Body = body;
+        }
     }
 }

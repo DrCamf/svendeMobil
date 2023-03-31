@@ -57,6 +57,7 @@ namespace svendeMobil.ViewModels
                     var role = "user";
                     var userInfo = new UserInfo()
                     {
+                        Id = int.Parse(response.UserId),
                         Username = useremail,
                         Role = role
                     };
@@ -82,7 +83,7 @@ namespace svendeMobil.ViewModels
 
         async Task DisplayLoginMessage(string message)
         {
-            await Shell.Current.DisplayAlert("Login Attempt",message , "OK");
+            await Shell.Current.DisplayAlert("Login Attempt", message, "OK");
             password = string.Empty;
         }
     }

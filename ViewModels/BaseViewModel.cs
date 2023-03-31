@@ -22,5 +22,7 @@ namespace svendeMobil.ViewModels
 
         public bool IsNotLoading => !isLoading;
 
+
+
     }
 }

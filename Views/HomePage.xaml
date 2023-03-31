@@ -8,5 +8,12 @@
             Text="Welcome to MAUI HOME!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label Text="This is the home page for all"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+               FontSize="Large"/>
+        <Button Text="Messages" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding MessageOpenCommand}"/>
+        <Button Text="Log Out" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Margin="0,15" Command="{Binding LogOutCommand}"/>
+        
     </VerticalStackLayout>
 </ContentPage>

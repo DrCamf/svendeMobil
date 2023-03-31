@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="svendeMobil.Views.MessagePage"
+             xmlns:viewmodel ="clr-namespace:svendeMobil.ViewModels"
+             x:DataType="viewmodel:MessageViewModel"
              Title="MessagePage">
     <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
         <VerticalStackLayout>
@@ -12,14 +14,14 @@
             HorizontalOptions="Center" />
 
             <Label Text="Send til" />
-            <Picker Title="Select a user"
+            <Picker x:Name="sentto" Title="Select a user" SelectedIndex="{Binding Sentid}"
                 ItemsSource="{Binding Users}"
-                 ItemDisplayBinding="{Binding Names}" />
+                 ItemDisplayBinding="{Binding FullName}" />
             <Label Text="Subject" />
-            <Entry x:Name="subject" Placeholder="Enter subject" Text="{Binding Subject}"/>
+            <Entry x:Name="subject" Placeholder="Enter subject" Text="{Binding Subject}"   />
             <Label Text="Text" />
-            <Entry x:Name="body" Placeholder="Enter some message" IsPassword="True" Text="{Binding Body}"/>
-            <Button Text="Login" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding MessageCommand}"/>
+            <Entry x:Name="body" Placeholder="Enter some message" Text="{Binding Body}"   />
+            <Button Text="Send" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding MessageSendCommand}"/>
         </VerticalStackLayout>
         
         
