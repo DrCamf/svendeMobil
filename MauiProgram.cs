@@ -30,12 +30,15 @@ public static class MauiProgram
         builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<HomePage>();
         builder.Services.AddSingleton<MessagePage>();
+        builder.Services.AddSingleton<MessageSendPage>();
+        builder.Services.AddSingleton<RegisterPage>();
 
         // ViewModels
         builder.Services.AddSingleton<LoadingViewModel>();
         builder.Services.AddSingleton<LoginViewModel>();
         builder.Services.AddSingleton<HomeViewModel>();
         builder.Services.AddSingleton<MessageViewModel>();
+        builder.Services.AddSingleton<RegisterViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();

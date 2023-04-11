@@ -80,6 +80,12 @@ namespace svendeMobil.ViewModels
             }
         }
 
+        [RelayCommand]
+        async Task GoRegister()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(RegisterPage)}");
+        }
+
 
         async Task DisplayLoginMessage(string message)
         {

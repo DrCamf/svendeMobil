@@ -17,6 +17,7 @@
         <Label Text="Adgangs kode" />
             <Entry x:Name="userpassword" Placeholder="Enter password" IsPassword="True" Text="{Binding Password}"/>
         <Button Text="Login" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding LoginCommand}"/>
+        <Button Text="Register" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding GoRegisterCommand}"/>
     </VerticalStackLayout>
 
 
